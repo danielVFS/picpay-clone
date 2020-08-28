@@ -1,11 +1,57 @@
 import React from 'react';
+import { Feather, MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 
-import { Container } from './styles';
+import { Container, Header, Title, Options, SubTitle, Card, CardHeader, 
+        Avatar, Description, Bold, CardBody, UserName, CardFooter, Details, Value, 
+        Divider, Date, Actions, Option, OptionLabel } from './styles';
+import avatar from '../../assets/avatar.png';
 
 export default function Activities() {
   return (
-    <Container >
-      
+    <Container>
+      <Header>
+        <Title>Atividades</Title>
+        <Options>
+          <SubTitle selected>Todas</SubTitle>
+          <Divider />
+          <SubTitle>Minhas</SubTitle>
+        </Options>
+      </Header>
+
+      <Card>
+        <CardHeader>
+          <Avatar source={avatar}/>
+          <Description>
+            <Bold>Você</Bold> pagou a <Bold>@mcdonalds</Bold>
+          </Description>
+        </CardHeader>
+
+        <CardBody>
+          <UserName>Daniel Vitor</UserName>
+        </CardBody>
+
+        <CardFooter>
+          <Details>
+            <Value>R$ 18,00</Value>
+            
+            <Divider />
+            
+            <Feather name="lock" color="#FFF" size={14}/>
+            <Date>Há 2 anos</Date>
+          </Details>
+
+          <Actions>
+            <Option>
+              <MaterialCommunityIcons name="comment-outline" size={14} color="#FFF"/>
+              <OptionLabel>0</OptionLabel>
+            </Option>
+            <Option>
+              <AntDesign name="hearto" size={14} color="#FFF"/>
+              <OptionLabel>0</OptionLabel>
+            </Option>
+          </Actions>
+        </CardFooter>
+      </Card>
     </Container>
   );
 } 

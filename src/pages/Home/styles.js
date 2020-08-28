@@ -5,6 +5,8 @@ export const Wrapper = styled.SafeAreaView`
   background: #000;
 `;
 
+export const Container = styled.ScrollView``;
+
 export const Header = styled.View`
   height: 50px;
   padding: 0 15px;

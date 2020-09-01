@@ -2,9 +2,10 @@ import React,{ useCallback } from 'react';
 import { useFocusEffect } from "@react-navigation/native";
 import { StatusBar, Platform } from 'react-native';
 import { Feather, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
+import { Switch } from 'react-native';
 
 import { Wrapper, Header, HeaderContainer, Title, BalanceContainer, 
-  Value, Bold, EyeButton, Info, Actions, Action, ActionLabel } from './styles';
+  Value, Bold, EyeButton, Info, Actions, Action, ActionLabel, UseBalance, UseBalanceTitle } from './styles';
 
 export default function Wallet() {
   useFocusEffect(
@@ -46,9 +47,15 @@ export default function Wallet() {
             </Action>
           </Actions>
         </HeaderContainer>
-
-
      </Header>
+
+     <UseBalance>
+       <UseBalanceTitle>
+          Usar saldo ao pagar
+       </UseBalanceTitle>
+
+       <Switch />
+     </UseBalance>
    </Wrapper>
   );
 }

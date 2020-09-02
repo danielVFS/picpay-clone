@@ -1,4 +1,4 @@
-import React,{ useCallback } from 'react';
+import React,{ useCallback, useState } from 'react';
 import { useFocusEffect } from "@react-navigation/native";
 import { StatusBar, Platform } from 'react-native';
 import { Feather, MaterialCommunityIcons, FontAwesome, AntDesign } from '@expo/vector-icons';
@@ -12,27 +12,46 @@ import { Wrapper, Header, HeaderContainer, Title, BalanceContainer,
 import creditCard from '../../assets/credit-card.png';
 
 export default function Wallet() {
+  const [isVisible, setIsVisible] = useState(true);
+  const [useBalance, setUseBalance] = useState(true)
+
   useFocusEffect(
     useCallback(() => {
       StatusBar.setBarStyle("light-content");
-      Platform.OS === "android" && StatusBar.setBackgroundColor("#52E78C");
+      Platform.OS === "android" && StatusBar.setBackgroundColor('#52e78c');
     }, [])
   );
-  
+
+  function handleToggleVisibile() {
+    setIsVisible((prevState) => !prevState);
+  }
+
+  function handleToggleUseBalance() {
+    setUseBalance((prevState) => !prevState);
+
+    StatusBar.setBackgroundColor(useBalance ? '#d3d3d3' : '#52e78c');
+  }
+
   return (
     <Wrapper>
       <StatusBar barStyle="dark-content" backgroundColor="#52E78C"/>
-      <Header colors={['#52e78c', '#1ab563']}>
+      <Header 
+        colors={
+          useBalance
+          ? ['#52e78c', '#1ab563']
+          : ['#d3d3d3', '#868686']
+        }
+      >
         <HeaderContainer>
           <Title>Saldo do PicPay</Title>
 
           <BalanceContainer>
             <Value>
-              R$ <Bold>0,00</Bold>
+              R$ <Bold>{isVisible ? '0,00' : '----'}</Bold>
             </Value>
 
-            <EyeButton>
-              <Feather name="eye" size={28} color="#FFF"/>
+            <EyeButton onPress={handleToggleVisibile}>
+              <Feather name={isVisible ? 'eye' : 'eye-off'} size={28} color="#FFF"/>
             </EyeButton>
           </BalanceContainer>
 
@@ -58,7 +77,10 @@ export default function Wallet() {
           Usar saldo ao pagar
         </UseBalanceTitle>
 
-        <Switch />
+        <Switch 
+          value={useBalance}
+          onValueChange={handleToggleUseBalance}
+        />
       </UseBalance>
       <PaymentMethods>
         <PaymentMethodsTitle>

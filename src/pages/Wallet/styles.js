@@ -1,7 +1,9 @@
 import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export const Wrapper = styled.View`
+export const Wrapper = styled.ScrollView.attrs(() => ({
+  showsHorizontalScrollIndicator: false,
+}))`
   background: #000;
   flex: 1;
 `;
@@ -86,4 +88,39 @@ export const UseBalanceTitle = styled.Text`
   font-size: 16px;
   font-weight: 500;
 `;
+
+export const PaymentMethods = styled.View`
+  margin-top: 25px;
+  padding: 0 16px;
+`;
+
+export const PaymentMethodsTitle = styled.Text`
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+`;
+
+export const Card = styled.View`
+  background-color: #1e232a;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 10px;
+`;
+
+export const CardDetails = styled.View``;
+
+export const CardTitle = styled.Text`
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFF;
+`;
+
+export const CardInfo = styled.Text`
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 15px;
+`;
+
+export const CardImg = styled.Image``;
+
+export const x = styled.View``;
 

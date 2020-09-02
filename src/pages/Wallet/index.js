@@ -5,7 +5,11 @@ import { Feather, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons
 import { Switch } from 'react-native';
 
 import { Wrapper, Header, HeaderContainer, Title, BalanceContainer, 
-  Value, Bold, EyeButton, Info, Actions, Action, ActionLabel, UseBalance, UseBalanceTitle } from './styles';
+  Value, Bold, EyeButton, Info, Actions, Action, ActionLabel, UseBalance, UseBalanceTitle, 
+  PaymentMethods, PaymentMethodsTitle, Card, CardDetails, CardTitle, CardInfo,
+  CardImg } from './styles';
+
+import creditCard from '../../assets/credit-card.png';
 
 export default function Wallet() {
   useFocusEffect(
@@ -16,9 +20,9 @@ export default function Wallet() {
   );
   
   return (
-   <Wrapper>
-     <StatusBar barStyle="dark-content" backgroundColor="#52E78C"/>
-     <Header colors={['#52e78c', '#1ab563']}>
+    <Wrapper>
+      <StatusBar barStyle="dark-content" backgroundColor="#52E78C"/>
+      <Header colors={['#52e78c', '#1ab563']}>
         <HeaderContainer>
           <Title>Saldo do PicPay</Title>
 
@@ -47,15 +51,33 @@ export default function Wallet() {
             </Action>
           </Actions>
         </HeaderContainer>
-     </Header>
+      </Header>
 
-     <UseBalance>
-       <UseBalanceTitle>
+      <UseBalance>
+        <UseBalanceTitle>
           Usar saldo ao pagar
-       </UseBalanceTitle>
+        </UseBalanceTitle>
 
-       <Switch />
-     </UseBalance>
+        <Switch />
+      </UseBalance>
+      <PaymentMethods>
+        <PaymentMethodsTitle>
+          Formas de pagamento
+        </PaymentMethodsTitle>
+
+        <Card>
+          <CardDetails>
+            <CardTitle>
+              Cadastre seu cartão de crédito
+            </CardTitle>
+            <CardInfo>
+              Cadastre um cartão de crédito para poder fazer pagamentos mesmo quando não tiver saldo no seu PicPay
+            </CardInfo>
+          </CardDetails>
+
+          <CardImg source={creditCard}/>
+        </Card>
+      </PaymentMethods>
    </Wrapper>
   );
 }

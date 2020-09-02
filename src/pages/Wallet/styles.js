@@ -133,5 +133,19 @@ export const CardImg = styled.Image`
   width: 60px;
 `;
 
+export const AddButton = styled.TouchableOpacity`
+  margin-top: 20px;
+  
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const AddLabel = styled.Text`
+  color: #0DB060;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 15px;
+`;
+
 export const x = styled.View``;
 

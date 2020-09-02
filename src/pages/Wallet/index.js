@@ -1,13 +1,13 @@
 import React,{ useCallback } from 'react';
 import { useFocusEffect } from "@react-navigation/native";
 import { StatusBar, Platform } from 'react-native';
-import { Feather, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
+import { Feather, MaterialCommunityIcons, FontAwesome, AntDesign } from '@expo/vector-icons';
 import { Switch } from 'react-native';
 
 import { Wrapper, Header, HeaderContainer, Title, BalanceContainer, 
   Value, Bold, EyeButton, Info, Actions, Action, ActionLabel, UseBalance, UseBalanceTitle, 
   PaymentMethods, PaymentMethodsTitle, Card, CardBody, CardDetails, CardTitle, CardInfo,
-  CardImg } from './styles';
+  CardImg, AddButton, AddLabel } from './styles';
 
 import creditCard from '../../assets/credit-card.png';
 
@@ -78,6 +78,12 @@ export default function Wallet() {
 
             <CardImg source={creditCard} resizeMode="contain"/>
           </CardBody>
+          <AddButton>
+            <AntDesign name="pluscircleo" size={30} color="#0DB060"/>
+            <AddLabel>
+              Adicionar cartão de crédito
+            </AddLabel>
+          </AddButton>
         </Card>
       </PaymentMethods>
    </Wrapper>

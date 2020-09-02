@@ -7,7 +7,7 @@ import { Switch } from 'react-native';
 import { Wrapper, Header, HeaderContainer, Title, BalanceContainer, 
   Value, Bold, EyeButton, Info, Actions, Action, ActionLabel, UseBalance, UseBalanceTitle, 
   PaymentMethods, PaymentMethodsTitle, Card, CardBody, CardDetails, CardTitle, CardInfo,
-  CardImg, AddButton, AddLabel } from './styles';
+  CardImg, AddButton, AddLabel, UseTicketButton, UseTicketLabel } from './styles';
 
 import creditCard from '../../assets/credit-card.png';
 
@@ -85,6 +85,12 @@ export default function Wallet() {
             </AddLabel>
           </AddButton>
         </Card>
+
+        <UseTicketButton>
+          <MaterialCommunityIcons name="ticket-outline" size={20} color="#0DB060"/>
+
+          <UseTicketLabel>Usar código promocional</UseTicketLabel>
+        </UseTicketButton>
       </PaymentMethods>
    </Wrapper>
   );

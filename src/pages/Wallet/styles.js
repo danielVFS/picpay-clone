@@ -142,10 +142,26 @@ export const AddButton = styled.TouchableOpacity`
 
 export const AddLabel = styled.Text`
   color: #0DB060;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin-left: 15px;
 `;
 
-export const x = styled.View``;
+export const UseTicketButton = styled.TouchableOpacity`
+  margin-top: 25px;
+  margin-bottom: 40px;
+  
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const UseTicketLabel = styled.Text`
+  color: #0DB060;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 15px;
+  text-decoration-line: underline;
+`;
+
 

@@ -6,7 +6,7 @@ import { Switch } from 'react-native';
 
 import { Wrapper, Header, HeaderContainer, Title, BalanceContainer, 
   Value, Bold, EyeButton, Info, Actions, Action, ActionLabel, UseBalance, UseBalanceTitle, 
-  PaymentMethods, PaymentMethodsTitle, Card, CardDetails, CardTitle, CardInfo,
+  PaymentMethods, PaymentMethodsTitle, Card, CardBody, CardDetails, CardTitle, CardInfo,
   CardImg } from './styles';
 
 import creditCard from '../../assets/credit-card.png';
@@ -66,16 +66,18 @@ export default function Wallet() {
         </PaymentMethodsTitle>
 
         <Card>
-          <CardDetails>
-            <CardTitle>
-              Cadastre seu cartão de crédito
-            </CardTitle>
-            <CardInfo>
-              Cadastre um cartão de crédito para poder fazer pagamentos mesmo quando não tiver saldo no seu PicPay
-            </CardInfo>
-          </CardDetails>
+          <CardBody>
+            <CardDetails>
+              <CardTitle>
+                Cadastre seu cartão de crédito
+              </CardTitle>
+              <CardInfo>
+                Cadastre um cartão de crédito para poder fazer pagamentos mesmo quando não tiver saldo no seu PicPay.
+              </CardInfo>
+            </CardDetails>
 
-          <CardImg source={creditCard}/>
+            <CardImg source={creditCard} resizeMode="contain"/>
+          </CardBody>
         </Card>
       </PaymentMethods>
    </Wrapper>

@@ -106,7 +106,16 @@ export const Card = styled.View`
   margin-top: 10px;
 `;
 
-export const CardDetails = styled.View``;
+export const CardBody = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
+
+export const CardDetails = styled.View`
+  flex: 1;
+  margin-right: 20px;
+`;
 
 export const CardTitle = styled.Text`
   font-size: 18px;
@@ -115,12 +124,14 @@ export const CardTitle = styled.Text`
 `;
 
 export const CardInfo = styled.Text`
-  font-size: 16px;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.8);
   margin-top: 15px;
 `;
 
-export const CardImg = styled.Image``;
+export const CardImg = styled.Image`
+  width: 60px;
+`;
 
 export const x = styled.View``;
 
